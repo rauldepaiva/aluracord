@@ -70,8 +70,7 @@ export default function PaginaInicial() {
                         as="form"
                         onSubmit={function (e) {
                             e.preventDefault();
-                            routing.push("/chat");
-                            console.log("Submissão");
+                            routing.push(`/chat?username=${username}`);
                         }}
                         styleSheet={{
                             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
@@ -141,7 +140,7 @@ export default function PaginaInicial() {
                                 borderRadius: '50%',
                                 marginBottom: '16px',
                             }}
-                            src={`https://github.com/${username}.png`}
+                            src={username.length > 2 ? `https://github.com/${username}.png` : `https://www.analyticdesign.com/wp-content/uploads/2018/07/unnamed.gif`}
                         />
                         <Text
                             variant="body4"
